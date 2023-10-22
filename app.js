@@ -36,7 +36,7 @@ function display() {
   <div>
   <span onclick="deleteItem(${i})">&times;</span>
     <span>|</span>
-    <span onclick="addItem(${i})">Edit</span>
+    <span onclick="editItem(${i})">Edit</span>
   </div>
 
 </li>`
@@ -53,7 +53,7 @@ function deleteItem(i) {
     localStorage.setItem("toDoArray",JSON.stringify(toDoArray))
 }
 
-function addItem(i) {
+function editItem(i) {
     var newValue = prompt("Enter a new value")
     toDoArray.splice(i, 1, newValue)
     display()
